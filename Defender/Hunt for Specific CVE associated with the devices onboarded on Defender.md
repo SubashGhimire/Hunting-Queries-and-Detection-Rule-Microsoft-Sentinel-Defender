@@ -1,4 +1,4 @@
-#### This Query looks for Specific CVE specified in the query and lists out all the onboarded devices that has the CVE specified. In defender, in Threat Analytics  you can see the latest known vulnerability details. The idea of this query is to find out if any latest discovered vulnerability is exposed to the devices that are in your environment.
+#### This Query looks for Specific CVE specified in the query and lists out all the onboarded devices that are exposed to the CVE specified. In defender, in Threat Analytics  you can see the latest known vulnerability details. The idea of this query is to find out if any latest discovered vulnerability is exposed to the devices that are in your environment.
 #### Query:
 ```KQL
 DeviceTvmSoftwareVulnerabilities

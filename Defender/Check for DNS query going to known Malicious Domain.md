@@ -1,4 +1,4 @@
-#### This query Looks any DNS query traffic going to any known malicious domain by looking at the ThreatIngelligenceIndicator database that is ingested into sentinel/Defender via Data Connector.
+####  This query Looks any DNS query traffic going to any known malicious domain by looking at the ThreatIngelligenceIndicator database that is ingested into sentinel/Defender via Data Connector.
 
 ```KQL
 IdentityQueryEvents

@@ -1,5 +1,6 @@
-//Hunting querry to see Log on events inside organization domain
-Query:
+#### Hunting query to see Log on events inside organization domain
+#### Query:
+```KQL
 let Lookback = ago(1d);
 let Signins = 
 IdentityLogonEvents
@@ -7,3 +8,4 @@ IdentityLogonEvents
 | distinct AccountDisplayName, AccountUpn, DeviceName, DestinationDeviceName, ActionType, AccountDomain, Application
 ;
 Signins 
+```

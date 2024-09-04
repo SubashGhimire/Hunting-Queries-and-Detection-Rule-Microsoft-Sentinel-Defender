@@ -1,9 +1,10 @@
-//Look for accounts created and then deleted in under 24 hours. Attackers may create an account for their use, and then remove the account when no longer needed.
-//MITRE ATT&CK
-//Initial Access
-//T1078-Valid Accounts
+#### Look for accounts created and then deleted in under 24 hours. Attackers may create an account for their use, and then remove the account when no longer needed.
+## MITRE ATT&CK
+### Initial Access
+### T1078-Valid Accounts
 
-Query:
+#### Query:
+```KQL
 let AccountCreationEvents = 
     IdentityDirectoryEvents
     | where ActionType == "User Account Created"
@@ -18,5 +19,5 @@ AccountCreationEvents
 | where TimeDifference <= 1d
 | project AccountName, CreationTime, DeletionTime
 | order by CreationTime desc
-
+```
 

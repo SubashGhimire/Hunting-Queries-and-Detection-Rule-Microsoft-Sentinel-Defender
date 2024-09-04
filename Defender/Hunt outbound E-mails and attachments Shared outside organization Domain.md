@@ -1,6 +1,6 @@
-//To identify e-mails sent or forwarded outbound i.e outside of the organization e-mail domain:
-Query:
-
+#### To identify e-mails sent or forwarded outbound i.e outside of the organization e-mail domain:
+#### Query:
+```KQL
 let Lookback = ago(1d);
 let AllEmailActivity = 
 EmailEvents_CL
@@ -9,10 +9,12 @@ EmailEvents_CL
 | where EmailDirection_s == "Outbound"
 ;
 AllEmailActivity 
+```
 
-//Now join the AllemailActivity data to the EmailAttachmentinfo Table to match if any outbound e-mail being sent from the organization e-mail domain with attachments:
+#### Now join the AllemailActivity data to the EmailAttachmentinfo Table to match if any outbound e-mail being sent from the organization e-mail domain with attachments:
 
-Final Query:
+#### Final Query:
+```KQL
 let Lookback = ago(1d);
 let AllEmailActivity = 
 EmailEvents_CL
@@ -28,5 +30,6 @@ let EmailWithAttachments =
 ;
 EmailWithAttachments
 | project TimeGenerated, SenderFromAddress_s, RecipientEmailAddress_s, FileType_s, FileName_s, FileSize_d
+```
 
-//Note: Table names for the query shown above can be different in different organization. Adjust the table name and its schema's according to the organization enviornment.
+##### Note: Table names for the query shown above can be different in different organization. Adjust the table name and its schema's according to the organization enviornment.

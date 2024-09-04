@@ -1,5 +1,6 @@
-//This query helps see if there is unusual amount of DNS queries.
-Query:
+#### This query helps see if there is unusual amount of DNS queries.
+#### Query:
+```KQL
 IdentityQueryEvents
 | where TimeGenerated > ago(1d)
 | where ActionType == "DNS query"
@@ -25,3 +26,4 @@ IdentityQueryEvents
     DestinationDeviceName,
     DestinationIPAddress,
     DestinationPort
+```

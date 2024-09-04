@@ -1,9 +1,10 @@
-//This query identifies if any user is created by enabling Account Password Not Required changed. 
-Which means if this is enabled i.e if it is changed form False to True that user does not have to enter the password for authentication.
-//Mitre Att&ck (Persistence)
-//T1098- Account Manipulation
+#### This query identifies if any user is created by enabling Account Password Not Required changed. 
+#### Which means if this is enabled i.e if it is changed form False to True that user does not have to enter the password for authentication.
+## Mitre Att&ck (Persistence)
+### T1098- Account Manipulation
 
-Query:
+#### Query:
+```KQL
 IdentityDirectoryEvents
 | where ActionType == "Account Password Not Required changed"
 | extend PreviousState = tostring(parse_json(AdditionalFields)['FROM Account Password Not Required'])
@@ -12,4 +13,4 @@ IdentityDirectoryEvents
 | where PreviousState == "False" and CurrentState == "True"
 | project TimeGenerated, AccountName, TargetAccountUpn, Actor, PreviousState, CurrentState, AdditionalFields
 | order by TimeGenerated desc
-
+```

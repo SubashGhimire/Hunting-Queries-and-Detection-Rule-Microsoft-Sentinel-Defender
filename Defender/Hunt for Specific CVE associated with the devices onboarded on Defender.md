@@ -5,6 +5,5 @@ DeviceTvmSoftwareVulnerabilities
 | where CveId == "CVE-2024-38063" \\ Specify the specific CVEID that you want to check
 | join kind=leftouter (DeviceInfo | project DeviceName, OnboardingStatus, DeviceId) on DeviceId
 | where OnboardingStatus == "Onboarded"  // Filter for Onboarded devices
-| project DeviceName, DeviceId, OnboardingStatus, SoftwareName, SoftwareVersion, CveId, VulnerabilitySeverityLevel, RecommendedSecurityUpdate, RecommendedSecurityUpdateId, OSPlatform
 | distinct DeviceName, DeviceId, OnboardingStatus, SoftwareName, SoftwareVersion, CveId, VulnerabilitySeverityLevel, RecommendedSecurityUpdate, RecommendedSecurityUpdateId, OSPlatform
 ```

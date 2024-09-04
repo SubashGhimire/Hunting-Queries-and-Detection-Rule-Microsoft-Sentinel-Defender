@@ -1,7 +1,8 @@
-//This KQL query is designed to track and summarize email activities related to a specific sender, focusing on instances where recipients clicked on URLs within those emails.
-//It Corelates the all three tables to list out the user's who clicked on the url's send by the specific Sender specified in the Query.
+#### This KQL query is designed to track and summarize email activities related to a specific sender, focusing on instances where recipients clicked on URLs within those emails.
+#### It Corelates the all three tables to list out the user's who clicked on the url's send by the specific Sender specified in the Query.
 
-Query:
+#### Query:
+```KQL
 let EmailEvents = EmailEvents_CL
     | where EmailDirection_s in("Inbound", "Intra-org")
     | where SenderFromAddress_s == "Ryan.Raynolds@deadpool.ca"  // Replace with the specific sender's email
@@ -53,9 +54,11 @@ EmailEvents
     Workload_s, 
     UrlDomain_s, 
     TimeGenerated
+```
 
-//Explanation:
-//KQL BreakDown:
+##### Explanation:
+##### KQL BreakDown:
+
 1. EmailEvents:
 let EmailEvents = EmailEvents_CL
     | where EmailDirection_s in("Inbound", "Intra-org")

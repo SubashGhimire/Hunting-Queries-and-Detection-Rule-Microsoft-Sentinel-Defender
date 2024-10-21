@@ -6,7 +6,7 @@
 DeviceInfo
 | where OnboardingStatus != "Onboarded"  // Exclude onboarded devices
 | where OSPlatform contains "Windows10" or OSPlatform contains "Windows11"  // Windows 10 or 11 OS
-| where (DeviceName matches regex "^[a-zA-Z0-9-]+\\.abc07\\.qqqq\\.qc\\.ca$" )  // Matches domain name abc07 
+| where DeviceName matches regex "^[a-zA-Z0-9-]+\\.abc07\\.qqqq\\.qc\\.ca$"   // Matches domain name abc07 only
 | where DeviceType == "Workstation"  // Device type is workstation
 | where Vendor contains "HP"  // Vendor contains "HP"
 | distinct DeviceId, DeviceName, OSPlatform, DeviceType, OnboardingStatus, Vendor  // Only distinct based on these columns

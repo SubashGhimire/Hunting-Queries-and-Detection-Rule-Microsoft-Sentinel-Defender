@@ -1,4 +1,4 @@
-#### This query idetifies any files being downlaoded from borwsers like Internet Explorer, Edge, Chrome and firefox. This query can be used as hunting query to identify any suspicious file being downloaded from device borwser, after an incident alert triggred in the defender or can be used just to hunt for any suspicious files being downlaoded on devices.
+#### This query idetifies any files being downlaoded from browsers like Internet Explorer, Edge, Chrome and firefox. This query can be used as hunting query to identify any suspicious file being downloaded from device browser, after an incident alert triggred in the defender or can be used just to hunt for any suspicious files being downlaoded on devices.
 
 #### Query:
 ```KQL

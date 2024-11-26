@@ -1,4 +1,4 @@
-
+#### Query
 ```KQL 
 EmailAttachmentInfo_CL
 | where SenderFromAddress_s =~ "MaliciousSender@example.com"

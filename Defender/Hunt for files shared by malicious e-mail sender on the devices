@@ -1,3 +1,5 @@
+
+```KQL 
 EmailAttachmentInfo_CL
 | where SenderFromAddress_s =~ "MaliciousSender@example.com"
 // Get emails with attachments identified by a SHA-256
@@ -9,3 +11,4 @@ EmailAttachmentInfo_CL
     | project FileName, SHA256, DeviceName, DeviceId
 ) on SHA256 
 | project Timestamp_t, FileName, SHA256, DeviceName, DeviceId, NetworkMessageId_g, SenderFromAddress_s, RecipientEmailAddress_s
+```

@@ -19,7 +19,7 @@ DeviceEvents
 | extend ServiceName = extractjson("$.ServiceName", tostring(AdditionalFields))
 | extend ServiceAccount = extractjson("$.ServiceAccount", tostring(AdditionalFields))
 | join kind=inner (Suspicious_Services) on $left.ServiceName == $right.service_name
-| project TimeGenerated, DeviceName, AccountName, InitiatingProcessAccountName, InitiatingProcessFileName, InitiatingProcessFolderPath, ActionType, ServiceName, ServiceAccount
+| project TimeGenerated, DeviceName, AccountName, InitiatingProcessAccountName, InitiatingProcessFileName, InitiatingProcessFolderPath, ActionType, ServiceName, ServiceAccount, metadata_comment, metadata_tool_category, metadata_tool_type, metadata_severity, metadata_reference, service_name, service_path
 | order by TimeGenerated desc
 ```
 #### Explanation:
@@ -88,7 +88,7 @@ DeviceEvents
 
 #### 5. Select Relevant Data
 ```KQL
-| project TimeGenerated, DeviceName, AccountName, InitiatingProcessAccountName, InitiatingProcessFileName, InitiatingProcessFolderPath, ActionType, ServiceName, ServiceAccount
+| project TimeGenerated, DeviceName, AccountName, InitiatingProcessAccountName, InitiatingProcessFileName, InitiatingProcessFolderPath, ActionType, ServiceName, ServiceAccount, metadata_comment, metadata_tool_category, metadata_tool_type, metadata_severity, metadata_reference, service_name, service_path
 ```
 ##### Purpose: Show only the important fields from the results.
 ##### Fields Selected:

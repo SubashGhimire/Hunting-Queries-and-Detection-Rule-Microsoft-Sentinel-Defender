@@ -50,7 +50,8 @@ with (format="csv", ignoreFirstRecord=True)
 ##### ignoreFirstRecord=True: Ignores the header row of the CSV file.
 
 ##### 2. Querying the Security Logs
-```CommonSecurityLog
+```KQL
+CommonSecurityLog
 | where TimeGenerated >= ago(1h)
 | where DeviceAction in ("accept", "pass", "close")
 ```

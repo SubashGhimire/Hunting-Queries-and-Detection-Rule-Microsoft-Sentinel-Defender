@@ -1,9 +1,0 @@
-﻿TimeGenerated,DeviceName,InitiatingProcessFileName,ProcessCommandLine,FolderPath,ReportId,AccountName,AccountUpn
-"Feb 6, 2025 4:18:19 PM",ws-wask0155.reg18.rtss.qc.ca,setup.exe,"""onestart.exe"" --from-installer",C:\Users\blumar02\AppData\Local\OneStart.ai\OneStart\Application\onestart.exe,36246,blumar02,blumar02@reg18.rtss.qc.ca
-"Jan 28, 2025 2:47:03 PM",ws-mist0588.reg18.rtss.qc.ca,setup.exe,"""onestart.exe"" --from-installer",C:\Users\founan01\AppData\Local\OneStart.ai\OneStart\Application\onestart.exe,654803,founan01,Nancy.Fournier@ssss.gouv.qc.ca
-"Feb 4, 2025 11:47:46 AM",ws-mist0616.reg18.rtss.qc.ca,setup.exe,"""onestart.exe"" --from-installer",C:\Users\brimar02.18TECHNOCENTRE\AppData\Local\OneStart.ai\OneStart\Application\onestart.exe,1302474,brimar02,maria.brien@ssss.gouv.qc.ca
-"Jan 30, 2025 9:06:27 AM",lp-chis0940.reg18.rtss.qc.ca,setup.exe,"""onestart.exe"" --from-installer",C:\Users\belsim01\AppData\Local\OneStart.ai\OneStart\Application\onestart.exe,12131,belsim01,Simon.Belisle@ssss.gouv.qc.ca
-"Feb 5, 2025 1:33:25 PM",lp-mont0490.reg18.rtss.qc.ca,setup.exe,"""onestart.exe"" --from-installer",C:\Users\mcmlei01\AppData\Local\OneStart.ai\OneStart\Application\onestart.exe,263212,mcmlei01,Leigh.Mcmahon@ssss.gouv.qc.ca
-"Feb 5, 2025 11:13:05 AM",lp-whap0048.reg18.rtss.qc.ca,setup.exe,"""onestart.exe"" --from-installer",C:\Users\thofab01\AppData\Local\OneStart.ai\OneStart\Application\onestart.exe,110780,thofab01,Fabienne.Thomas.reg18@ssss.gouv.qc.ca
-"Feb 6, 2025 11:31:25 AM",lp-chis0865.reg18.rtss.qc.ca,setup.exe,"""onestart.exe"" --from-installer",C:\Users\marche01\AppData\Local\OneStart.ai\OneStart\Application\onestart.exe,73171,marche01,cherubine.martin@ssss.gouv.qc.ca
-"Feb 27, 2025 10:43:01 AM",lp-mont0801.reg18.rtss.qc.ca,setup.exe,"""onestart.exe"" --from-installer --no-startup-window",C:\Users\lagjul01\AppData\Local\OneStart.ai\OneStart\Application\onestart.exe,434222,lagjul01,julie.lagace@ssss.gouv.qc.ca

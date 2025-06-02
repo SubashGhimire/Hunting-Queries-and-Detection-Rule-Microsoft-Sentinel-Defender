@@ -6,7 +6,7 @@
 ##### •	Source provider (e.g., Azure AD, on-prem AD)
 ##### •	Account creation time
 ##### •	Whether the account's credentials have been leaked
-##### •	The query filters and enriches this data, and presents it in a clean, readable format for hunting, triage, or alerting (by creating a Custom Analytic Rule in Sentinel).
+##### •	The query filters and enriches this data, and presents it in a clean, readable format for hunting or triage.
 ## 🧩 MITRE ATT&CK Mapping
 #### Tactic: Credential Access (TA0006)
 #### Technique: Unsecured Credentials (T1552)

@@ -1,0 +1,344 @@
+﻿type,value,source
+RmmToolName,Action1,public
+File Signature,Action1 Corporation,public
+domain,server.action1.com,public
+RmmToolName,Addigy,public
+domain,prod.addigy.com,public
+domain,grtmprod.addigy.com,public
+domain,agents.addigy.com,public
+RmmToolName,AeroAdmin ,public
+RmmToolName,Aero Admin,public
+File Signature,AeroAdmin,public
+domain,aeroadmin.com,public
+RmmToolName,Alpemix,public
+RmmToolName,AlpemixWEB,public
+File Signature,Teknopars Bilisim,public
+File Signature,TEKNOPARS BİLİŞİM,public
+domain,alpemix.com,public
+domain,serverinfo.alpemix.com,public
+domain,teknopars.com,public
+RmmToolName,Ammyy,public
+RmmToolName,Ammyy Admin,public
+File Signature,Ammyy,public
+domain,ammyy.com,public
+RmmToolName,anydesk software,public
+RmmToolName,philandro software,public
+RmmToolName,anydesk,public
+File Signature,anydesk software,public
+File Signature,philandro software,public
+domain,anydesk.com,public
+domain,api.playanext.com,public
+RmmToolName,AOMEI,public
+RmmToolName,AnyViewer,public
+File Signature,AOMEI International Network Limited,public
+domain,anyviewer.com,public
+domain,anyviewer.cn,public
+domain,aomeisoftware.com,public
+domain,aomeikeji.com,public
+RmmToolName,Anyplace Control Software,public
+RmmToolName,anyplace,public
+File Signature,Anyplace Control Software,public
+File Signature,Honcharuk Yuriy,public
+File Signature,Yuriy Honcharuk,public
+File Signature,Yurii Honcharuk,public
+domain,support.kastentornado.fi,public
+RmmToolName,Atera Networks,public
+RmmToolName,Atera,public
+File Signature,Atera Networks,public
+File Signature,Atera,public
+domain,atera.com,public
+domain,atera-agent-heartbeat,public
+RmmToolName,Auvik,public
+domain,auvik.com,public
+RmmToolName,AweRay,public
+RmmToolName,AweSun,public
+File Signature,aweray limited,public
+File Signature,aweray pte. ltd,public
+domain,aweray.com,public
+domain,aweray.net,public
+domain,awerayimg.com,public
+domain,awesun.app,public
+RmmToolName,Barracuda MSP,public
+RmmToolName,LPI Level Platforms,public
+File Signature,Barracuda Networks,public
+domain,rmm.barracudamsp.com,public
+domain,content.ivanti.com,public
+RmmToolName,BeamYourScreen,public
+RmmToolName,Mikogo,public
+File Signature,BeamYourScreen GmbH,public
+File Signature,Mikogo GmbH,public
+domain,mikogo.com,public
+domain,mikogo4.com,public
+domain,beamyourscreen.com,public
+RmmToolName,BeyondTrust,public
+RmmToolName,Bomgar,public
+File Signature,Bomgar Corporation,public
+File Signature,BeyondTrust Corporation,public
+File Signature,BeyondTrust Software,public
+domain,license.bomgar.com,public
+domain,bomgarcloud.com,public
+domain,beyondtrustcloud.com,public
+RmmToolName,Chrome Remote Desktop,public
+domain,remotedesktop-pa.googleapis.com,public
+RmmToolName,ConnectWise,public
+RmmToolName,Continuum Managed,public
+RmmToolName,ScreenConnect,public
+File Signature,ConnectWise,public
+File Signature,CONTINUUM MANAGED,public
+File Signature,ScreenConnect,public
+domain,myconnectwise.com,public
+domain,connectwise.com,public
+domain,screenconnect.com,public
+domain,itsupport247.net,public
+RmmToolName,CrossTec,public
+RmmToolName,NetSupport,public
+RmmToolName,CrossTec Remote,public
+File Signature,CrossTec,public
+File Signature,NetSupport,public
+domain,geo.netsupportsoftware.com,public
+domain,activate.netsupportsoftware.com,public
+RmmToolName,DWSNET OÜ,public
+File Signature,DWSNET OÜ,public
+domain,dwservice.net,public
+RmmToolName,DameWare,public
+RmmToolName,SolarWinds,public
+File Signature,DameWare Development,public
+domain,swi-rc.com,public
+domain,swi-tc.com,public
+domain,beanywhere.com,public
+domain,licenseserver.solarwinds.com,public
+File Signature,Datto Inc,public
+RmmToolName,Datto,public
+domain,rmm.datto.com,public
+domain,agent.centrastage.net,public
+domain,audit.centrastage.net,public
+domain,monitoring.centrastage.net,public
+domain,agent-notifications.centrastage.net,public
+domain,agent-comms.centrastage.net,public
+domain,update.centrastage.net,public
+domain,realtime.centrastage.net,public
+domain,ts.centrastage.net,public
+RmmToolName,NCH Software,public
+RmmToolName,DesktopNow,public
+File Signature,NCH Software,public
+domain,nchuser.com,public
+RmmToolName,Distant Software,public
+RmmToolName,Distant Desktop,public
+File Signature,German Gorodokuplya,public
+domain,distantdesktop.com,public
+domain,signalserver.xyz,public
+RmmToolName,eHorus,public
+RmmToolName,Artica,public
+domain,fleetdeck.io,public
+File Signature,fleetdeck,public
+domain,fleetdm.com,public
+RmmToolName,fleetdeck,public
+domain,getscreen.me,public
+RmmToolName,getscreen,public
+File Signature,Point B Ltd,public
+domain,getscreen.ru,public
+domain,iperius.com,public
+File Signature,Enter Srl,public
+File Signature,Enter S.R.L.,public
+RmmToolName,Enter Srl,public
+RmmToolName,Iperius Remote,public
+domain,iperius-r1.com,public
+domain,iperius-r2.com,public
+domain,iperius-r3.com,public
+domain,iperius-r4.com,public
+domain,iperiusremote.de,public
+domain,entersrl.it,public
+domain,islonline.net,public
+RmmToolName,ISL Online,public
+File Signature,ISL Online,public
+File Signature,XLAB D.O.O,public
+RmmToolName,Xlab,public
+domain,xmpp.itsm-us1.comodo.com,public
+RmmToolName,Itarian,public
+RmmToolName,Comodo,public
+domain,xmpp.cmdm.comodo.com,public
+domain,rmm-api.itsm-us1.comodo.com,public
+domain,rmm-api.cmdm.comodo.com,public
+domain,assist.jumpcloud.com,public
+RmmToolName,JumpCloud,public
+File Signature,JumpCloud,public
+domain,api.jumpcloud.com,public
+domain,kaseya.com,public
+RmmToolName,Kaseya VSA,public
+domain,stun.kaseya.com,public
+File Signature,Kaseya ,public
+domain,managedsupport.kaseya.net,public
+domain,kaseya.net,public
+domain,agents.level.io,public
+domain,level.io,public
+domain,online.level.io,public
+domain,level.io,public
+domain,builds.level.io,public
+domain,level.io,public
+domain,downloads.level.io,public
+domain,level.io,public
+RmmToolName,level,public
+File Signature,"Level Software, Inc",public
+domain,litemanager.ru,public
+RmmToolName,LiteManager,public
+domain,litemanager.com,public
+RmmToolName,ROMViewer,public
+RmmToolName,ROMServer,public
+File Signature,Yakhnovets Denis Aleksandrovich IP,public
+RmmToolName,update-cdn.logmein.com,public
+RmmToolName,LogMeIn,public
+RmmToolName,LogMeInRemoteControl,public
+RmmToolName,RemotelyAnywhere,public
+File Signature,LogMeIn,public
+File Signature,"GoTo, Inc",public
+domain,secure.logmein.com,public
+domain,update.logmein.com,public
+domain,logmeinrescue.com,public
+domain,logmeinrescue.eu,public
+domain,logmeinrescue-enterprise.com,public
+domain,logmeinrescue-enterprise.eu,public
+domain,remotelyanywhere.com,public
+domain,gotoassist.com,public
+domain,logmeininc.com,public
+domain,logme.in,public
+domain,getgo.com,public
+domain,goto.com,public
+domain,goto-rtc.com,public
+domain,gotomypc.com,public
+domain,logmeincdn.http.internapcdn.net,public
+domain,logmein-gateway.com,public
+domain,meshcentral.com,public
+RmmToolName,meshcentral,public
+File Signature,meshcentral,public
+domain,mremoteng.org,public
+RmmToolName,mRemoteNG,public
+domain,rm.mspbackups.com,public
+RmmToolName,CloudBerry,public
+RmmToolName,MSP360,public
+File Signature,MSPBytes,public
+File Signature,Trichilia Consultants,public
+domain,client.rmm.mspbackups.com,public
+domain,settings.services.mspbackups.com,public
+domain,connect.ra.msp360.com,public
+domain,foris.cloudberrylab.com,public
+domain,remote.management,public
+RmmToolName,N-Able,public
+domain,logicnow.com,public
+domain,logicnow.us,public
+domain,system-monitor.com,public
+domain,systemmonitor.eu.com,public
+domain,systemmonitor.co.uk,public
+domain,systemmonitor.us,public
+domain,n-able.com,public
+domain,solarwindsmsp.com,public
+domain,rmm-host.com,public
+domain,activate.netsupportsoftware.com,public
+RmmToolName,SolarWinds MSP,public
+RmmToolName,LogicNow Ltd,public
+File Signature,N-Able Technologies,public
+File Signature,LogicNow,public
+RmmToolName,NetSupport,public
+domain,geo.netsupportsoftware.com,public
+File Signature,NetSupport,public
+domain,ninjarmm.com,public
+RmmToolName,Ninja RMM,public
+RmmToolName,Ninja MSP,public
+domain,opti-tune.com,public
+RmmToolName,OptiTune,public
+domain,optitune.us,public
+RmmToolName,Bravura Software LLC,public
+File Signature,Bravura Software LLC,public
+domain,panorama9.com,public
+RmmToolName,panorama9,public
+domain,kessel-ws.parsec.app,public
+RmmToolName,parsec,public
+domain,kessel-api.parsec.app,public
+domain,builds.parsec.app,public
+domain,builds.parsecgaming.com,public
+domain,public.parsec.app,public
+domain,parsecusercontent.com,public
+domain,stun.parsec.app,public
+domain,stun6.parsec.app,public
+domain,pcvisit.de,public
+RmmToolName,pcvisit,public
+domain,cloudflare-pcvisit.com,public
+domain,pdq.com,public
+RmmToolName,pdq,public
+domain,pdq.tools,public
+domain,pulseway.com,public
+RmmToolName,pulseway,public
+domain,activate.famatech.com,public
+RmmToolName,RAdmin,public
+domain,radminte.com,public
+domain,services.vnc.com,public
+RmmToolName,realVNC,public
+domain,update-check.realvnc.com,public
+domain,remotepc.com,public
+RmmToolName,remotepc,public
+domain,rustdesk.com,public
+RmmToolName,rustdesk,public
+domain,screenmeet.com,public
+RmmToolName,screenmeet,public
+domain,server-eye.de,public
+RmmToolName,server-eye,public
+domain,showmypc.com,public
+RmmToolName,ShowMyPC,public
+domain,rmshelp.me,public
+RmmToolName,Simple-Help,public
+domain,splashtop.com,public
+RmmToolName,Splashtop,public
+domain,splashtop.eu,public
+domain,nanosystems.it,public
+RmmToolName,SupRemo,public
+domain,supremocontrol.com,public
+RmmToolName,SupRemo,public
+domain,syncromsp.com,public
+RmmToolName,SynchroMSP,public
+domain,servably.com,public
+domain,syncroapi.com,public
+domain,atled.syspectr.com,public
+RmmToolName,Syspectr,public
+domain,notify1.syspectr.com,public
+domain,cdn.syspectr.com,public
+domain,app.syspectr.com,public
+domain,tm.syspectr.com,public
+domain,console.syspectr.com,public
+domain,icanhazip.tacticalrmm.io,public
+RmmToolName,TacticalRMM,public
+domain,tacticalrmm.io,public
+domain,teamviewer.com,public
+RmmToolName,TeamViewer,public
+domain,teamviewer.cn,public
+domain,fixme.it,public
+RmmToolName,TechInline,public
+domain,techinline.net,public
+domain,set.me,public
+domain,tsplus-remotesupport.com,public
+domain,secure-download-file.com,public
+RmmToolName,TSplus,public
+domain,licenseapi.dl-files.com,public
+domain,securityapi.dl-files.com,public
+domain,monitoring.tsplus.net,public
+domain,ultraviewer.com,public
+RmmToolName,UltraViewer,public
+domain,xmreality.com,public
+RmmToolName,XMReality,public
+domain,assist.zoho.com,public
+RmmToolName,ZohoAssist,public
+domain,assist.zoho.eu,public
+domain,assist.zoho.com.au,public
+domain,assist.zoho.in,public
+domain,assist.zoho.jp,public
+domain,assist.zoho.uk,public
+domain,assistlab.zoho.com,public
+domain,downloads.zohocdn.com,public
+domain,download-accl.zoho.in,public
+domain,zohoassist.com,public
+domain,zohopublic.com,public
+domain,zohopublic.eu,public
+domain,meeting.zoho.com,public
+domain,meeting.zoho.eu,public
+domain,static.zohocdn.com,public
+domain,zohodl.com.cn,public
+domain,zohowebstatic.com,public
+domain,zohostatic.in,public

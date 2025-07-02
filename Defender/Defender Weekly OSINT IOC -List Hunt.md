@@ -1,5 +1,4 @@
-
-
+```KQL
 let WeeklyOSINT=externaldata(Type:string, Value:string, Source:string)
 [h'https://raw.githubusercontent.com/SlimKQL/Hunting-Queries-Detection-Rules/refs/heads/main/IOC/WeeklyOSINTHightlights17Feb2025.csv'];
 let OSINTSHA256 =
@@ -52,3 +51,4 @@ DeviceNetworkEvents
 | extend HttpHost = ConnectInfo.host
 | where HttpHost has_any(OSINTDOMAIN);
 union ScanEmailAttachments, ScanEmailURLs, ScanEndpointFiles, ScanEndpointNetwork1, ScanEndpointNetwork2
+```

@@ -5,7 +5,7 @@
 //Define new table for malicious emails
 let MaliciousEmails=EmailEvents_CL
 //List emails detected as malware, getting only pertinent columns
-| where ThreatTypes_s has "Malware"
+| where (ThreatTypes_s has "Malware" or ThreatTypes_s has "Phish" or ThreatTypes_s has "Spam") and EmailDirection_s == "Inbound"
 | project TimeEmail = Timestamp_t, Subject_s, SenderFromAddress_s, AccountName = tostring(split(RecipientEmailAddress_s, "@")[0]);
 MaliciousEmails
 | join (

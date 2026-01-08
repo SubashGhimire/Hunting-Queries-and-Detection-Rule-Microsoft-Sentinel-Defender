@@ -5,4 +5,5 @@ This repository is designed to share easy-to-understand KQL queries that anyone 
 
 Please note that claiming this material as your own is illegal and prohibited. When sharing or using the content, a reference to the GitHub repository is appreciated
 
-<iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=6296057" style='border:none;'></iframe>
+[![TryHackMe Badge](https://tryhackme.com/api/v2/badges
+

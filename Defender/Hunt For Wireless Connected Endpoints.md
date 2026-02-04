@@ -1,6 +1,6 @@
 ## 🔍 KQL Description
 #### This query is designed to:
-#### 1.Inventory Wi-Fi-connected devices and their network configurations.
+#### 1.List Wi-Fi-connected devices and their network configurations.
 #### 2.Identify public IP addresses in use.
 #### 4.Provide visibility into network adapter details, including vendor and status.
 ## 🧩 MITRE ATT&CK Mapping

@@ -2,7 +2,7 @@
 #### This query is designed to:
 #### 1.List Wi-Fi-connected devices and their network configurations.
 #### 2.Identify public IP addresses in use.
-#### 4.Provide visibility into network adapter details, including vendor and status.
+#### 3.Provide visibility into network adapter details, including vendor and status.
 ## 🧩 MITRE ATT&CK Mapping
 #### Tactic:Discovery (TA0007)
 #### Technique: System Network Configuration Discovery (T1016)

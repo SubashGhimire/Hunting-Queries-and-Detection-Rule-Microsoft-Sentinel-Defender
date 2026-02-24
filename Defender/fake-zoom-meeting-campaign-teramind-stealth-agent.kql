@@ -1,0 +1,81 @@
+// Name: Fake Zoom Meeting Campaign (Teramind Stealth Agent)
+// Author: Subash Ghimire
+// Date: 2026-02-24
+// Description: This rule detects artifacts and behaviors associated with a campaign that uses a fake Zoom meeting page to install the Teramind surveillance tool in stealth mode.
+// References: https://www.malwarebytes.com/blog/scams/2026/02/fake-zoom-meeting-update-silently-installs-surveillance-software
+// Tactic: Multiple
+// Technique: Multiple
+let fileHash = "644ef9f5eea1d6a2bc39a62627ee3c7114a14e7050bafab8a76b9aa8069425fa";
+let serviceName = "tsvchst";
+let domain = "uswebzoomus.com";
+let filePathPattern = @"C:\ProgramData\{4CEC2908-5CE4-48F0-A717-8FC833D8017A}";
+let fileNamePattern = "zoom_agent_x64_s-i";
+union isfuzzy=true withsource=TableName
+// Malicious MSI by hash or name
+(
+    DeviceFileEvents
+    | where SHA256 == fileHash 
+        or (FileName has fileNamePattern and FileName endswith ".msi")
+    | project TimeGenerated, DeviceId, DeviceName,
+        FileName, FolderPath, SHA256,
+        ProcessCommandLine = "",
+        InitiatingProcessFileName,
+        RemoteUrl = "",
+        ActionType
+),
+//Suspicious dwm.exe from ProgramData
+(
+    DeviceProcessEvents
+    | where InitiatingProcessFileName =~ "msiexec.exe"
+    | where FileName =~ "dwm.exe"
+    | where FolderPath has @"C:\ProgramData"
+    | where not(FolderPath matches regex @"C:\Windows\System32")
+    | project TimeGenerated, DeviceId, DeviceName,
+        FileName, FolderPath, SHA256 = "",
+        ProcessCommandLine,
+        InitiatingProcessFileName,
+        RemoteUrl = "",
+        ActionType = "SuspiciousProcess"
+),
+//Network to malicious domain
+(
+    DeviceNetworkEvents
+    | where RemoteUrl has domain
+    | project TimeGenerated, DeviceId, DeviceName,
+        FileName = "", FolderPath = "", SHA256 = "",
+        ProcessCommandLine = "",
+        InitiatingProcessFileName,
+        RemoteUrl,
+        ActionType
+),
+//Suspicious service install
+(
+    DeviceEvents
+    | where ActionType == "ServiceInstalled"
+    | where InitiatingProcessFileName has serviceName
+    | project TimeGenerated, DeviceId, DeviceName,
+        FileName = "", FolderPath = "", SHA256 = "",
+        ProcessCommandLine = "",
+        InitiatingProcessFileName,
+        RemoteUrl = "",
+        ActionType
+),
+//Suspicious folder creation
+(
+    DeviceFileEvents
+    | where ActionType == "FileCreated"
+    | where FolderPath has filePathPattern
+    | project TimeGenerated, DeviceId, DeviceName,
+        FileName, FolderPath, SHA256,
+        ProcessCommandLine = "",
+        InitiatingProcessFileName,
+        RemoteUrl = "",
+        ActionType
+)
+| summarize
+    FirstSeen = min(TimeGenerated),
+    LastSeen = max(TimeGenerated),
+    EvidenceCount = count(),
+    TablesInvolved = make_set(TableName)
+by DeviceId, DeviceName
+| order by EvidenceCount desc

@@ -1,0 +1,49 @@
+//Query 1. Audit recent commits to .github/workflows/ and Look for unauthorized bot-like commit authors:
+// Define bot naming conventions typically observed in this campaign
+let BotKeywords = dynamic(["build-bot", "ci-bot", "bot"]);
+let TargetPath = ".github/workflows/";
+let SuspiciousCommits = DeviceProcessEvents
+// Focus on git executions related to staging, committing, or pushing
+| where FileName =~ "git.exe" or FileName =~ "git"
+| where ProcessCommandLine has_any ("commit", "push", "add")
+// Look for the targeted workflows directory in the command line
+| where ProcessCommandLine has TargetPath
+// Check if the executing account or parent process matches bot-like naming conventions
+| where AccountName has_any (BotKeywords) 
+   or InitiatingProcessFileName has_any (BotKeywords) 
+   or InitiatingProcessCommandLine has_any (BotKeywords)
+| extend 
+    ActivityType = "Suspicious Git Workflow Modification",
+    Entity = DeviceName,
+    Destination = "Local Git Repository",
+    Indicator = ProcessCommandLine;
+
+//Query 2. Hunt for outbound connections to 216.126.225.129:8443
+let C2_IP = "216.126.225.129";
+let C2_Port = 8443;
+let SuspiciousNetwork = union isfuzzy=true
+    (
+        DeviceNetworkEvents
+        | where RemoteIP == C2_IP
+        | where RemotePort == C2_Port
+        | extend 
+            ActivityType = "Megalodon C2 Connection", 
+            Entity = DeviceName, 
+            Destination = RemoteIP, 
+            Indicator = strcat(RemoteIP, ":", tostring(RemotePort))
+    ),
+    (
+        CommonSecurityLog
+        | where DestinationIP == C2_IP
+        | where DestinationPort == C2_Port
+        | extend 
+            ActivityType = "Megalodon C2 Connection", 
+            Entity = SourceIP, 
+            Destination = DestinationIP, 
+            Indicator = strcat(DestinationIP, ":", tostring(DestinationPort))
+    );
+
+//Combine Query 1 and 2
+union isfuzzy=true SuspiciousCommits, SuspiciousNetwork
+| project TimeGenerated, ActivityType, Entity, Destination, Indicator, Type
+| sort by TimeGenerated desc

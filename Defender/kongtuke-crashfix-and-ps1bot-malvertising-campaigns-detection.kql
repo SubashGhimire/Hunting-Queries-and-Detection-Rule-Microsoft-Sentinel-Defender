@@ -1,0 +1,108 @@
+// Detection: KongTuke (CrashFix) and PS1Bot Malvertising Campaigns
+// Author: Subash Ghimire
+// Date: 2026-06-12
+// Description: Identifies indicators and behaviors associated with KongTuke and PS1Bot campaigns. 
+//              This includes finger.exe abuse, scheduled task and registry persistence, dynamic 
+//              C# compilation for keylogging/screen capture, and suspicious PowerShell download cradles.
+// References:
+//   - https://thehackernews.com/2026/01/crashfix-chrome-extension-delivers.html
+//   - https://blog.talosintelligence.com/ps1bot-malvertising-campaign/
+let PS1BotIPs = dynamic([
+"94.130.161.104","138.201.131.172","88.99.70.60","77.221.155.150",
+"67.217.228.251","138.201.128.249","88.99.95.84","167.99.233.78",
+"77.110.101.81","213.176.113.168","95.181.173.91","147.45.45.168",
+"181.174.164.12","181.174.164.170","181.174.164.2","181.174.164.201",
+"181.174.164.238","62.60.178.24","77.110.116.227","88.99.136.223",
+"88.119.175.100","5.61.41.230","77.110.126.250","64.52.80.78"
+]);
+let PS1BotDomains = dynamic([
+"clothestag.com",
+"neagersir.club",
+"neagersir.xyz",
+"bizfortsecureon.com",
+"allianceworldnet.com",
+"clubsoar.com",
+"tomrennen.com",
+"citybeautifulchurch.com",
+"android-flashcards.net",
+"artistichairlounge.com"
+]);
+let PS1BotURIPaths = dynamic([
+"/dua",
+"/raw",
+"/nak",
+"/transform",
+"/pgq",
+"/mhx"
+]);
+let PS1BotHashes = dynamic([
+"22054ace7e7fdcb37da90f54e25d59ffa0edbcb63198b0121561d8a23124b6cd",
+"25ea1cb8754de27f165cb4824e29facd1a1784599b7774a0fad5138b0b87cbc9",
+"b674faecc2faf22064c3447838e6ba32098b638439c28b8ab55d16e40c45a13e",
+"37e0f67c422228cf5c9bcfd63d74eb8415f4e95f82107966615d5420f57adf03",
+"9deada0e1b691d5f4bf8a9a892ec60ad4bac3609b5dba09fbf9d24adf00c9ba4",
+"9aed9e49b665440242de2163f542245137d3a2e09862c94a4176969db8fc85b7",
+"9e77cc9e91348d835195b8a8b73251ef535d036d552b2b493291e16df73105d5",
+"df871c2144e187b99f4c0665e73497c27601e611dd46622e3c64c231851cc85b",
+"02224be8447a8ab91b48862db7514a405bd87add4194fcac053ed5f7d5040e1f",
+"4dcbce6aa16ab77a40b2acd9293fa7c8ec4783379e5ebf0edc85f356393c34c6",
+"6e336a507887eb3a342bfbc73781978b604107064a73c1fed24d6fc6eb72106f",
+"117498ab29ed7a61cb3f55273d06546c9262bb1d82d208873099a10ca9ed6d99",
+"60e1293c80b70524bde67510c4f544abdd562aa5ce96c4b1739d89dc8c004334",
+"14ac92bf5b6b5be4b83017806be6741f91a8b65e5269ecfd6019ce7fb1840293",
+"9571c046d47eb890c634d80c2a9d88ac7fd228ff981289599f4fd731d9f6a295",
+"70e843c4ecafd1f7ba183720d2d2ae7c5171b01a1b78e94fa0052288149dff65",
+"7688fd029060530fcfde9c5e2502f3272734106d8b005c869cd730d721107bc7",
+"7504cc17d33d0a5b7243a9880a18c0e14e02a6bbdc6cf79b9f272f42c84588d5",
+"715126e3f647cd45f61af6bb477df2b7df17c9211b625cf03ac332555653a0a1"
+]);
+union isfuzzy=true
+// Network IOC matches
+(
+DeviceNetworkEvents
+| where Timestamp > ago(90d)
+| where RemoteIP in (PS1BotIPs)
+    or RemoteUrl has_any (PS1BotDomains)
+    or RemoteUrl has_any (PS1BotURIPaths)
+| project
+    Timestamp,
+    DeviceName,
+    TableName="DeviceNetworkEvents",
+    MatchType=case(
+        RemoteIP in (PS1BotIPs), "Malicious IP",
+        RemoteUrl has_any (PS1BotDomains), "Malicious Domain",
+        "Malicious URI"
+    ),
+    Indicator=coalesce(RemoteUrl, RemoteIP),
+    FileName=InitiatingProcessFileName,
+    CommandLine=InitiatingProcessCommandLine
+),
+// File IOC matches
+(
+DeviceFileEvents
+| where Timestamp > ago(90d)
+| where SHA256 in (PS1BotHashes)
+| project
+    Timestamp,
+    DeviceName,
+    TableName="DeviceFileEvents",
+    MatchType="Malicious SHA256",
+    Indicator=SHA256,
+    FileName,
+    CommandLine=InitiatingProcessCommandLine
+),
+// Process IOC matches
+(
+DeviceProcessEvents
+| where Timestamp > ago(90d)
+| where SHA256 in (PS1BotHashes)
+| project
+    Timestamp,
+    DeviceName,
+    TableName="DeviceProcessEvents",
+    MatchType="Malicious Process SHA256",
+    Indicator=SHA256,
+    FileName,
+    CommandLine=ProcessCommandLine
+)
+| order by Timestamp desc

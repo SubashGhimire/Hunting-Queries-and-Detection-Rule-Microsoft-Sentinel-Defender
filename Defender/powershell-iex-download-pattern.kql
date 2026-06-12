@@ -1,0 +1,27 @@
+// Detection: PowerShell IEX Download Pattern
+// Author: Subash Ghimire
+// Date: 2026-06-12
+// Description: Detects PowerShell downloading and executing remote payloads using invoke-restmethod/irm and invoke-expression/iex. 
+// This technique is widely used by ClearFake and PS1Bot malvertising campaigns to execute in-memory payloads directly from C2 servers.
+// MITRE ATT&CK: T1059.001 (Command and Scripting Interpreter: PowerShell)
+// References:
+// - https://redcanary.com/blog/threat-intelligence/intelligence-insights-february-2026/
+
+DeviceProcessEvents
+| where TimeGenerated > ago(90d)
+| where InitiatingProcessFileName in~ ("wscript.exe","cscript.exe")
+| where FileName in~ ("powershell.exe","pwsh.exe")
+| where ProcessCommandLine has_any (
+    "IEX",
+    "Invoke-Expression",
+    "DownloadString",
+    "Add-Type"
+)
+| project
+    TimeGenerated,
+    DeviceName,
+    FileName,
+    ProcessCommandLine,
+    InitiatingProcessFileName,
+    InitiatingProcessCommandLine
+| order by TimeGenerated desc

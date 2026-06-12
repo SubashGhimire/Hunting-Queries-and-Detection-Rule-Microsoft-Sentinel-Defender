@@ -1,0 +1,13 @@
+//Author: Subash Ghimire
+//KQL to check if any .ps1 was dropped into program data.
+DeviceFileEvents
+| where TimeGenerated > ago(90d)
+| where FolderPath startswith @"C:\ProgramData"
+| where FileName endswith ".ps1"
+| project
+    TimeGenerated,
+    DeviceName,
+    FileName,
+    FolderPath,
+    InitiatingProcessFileName,
+    InitiatingProcessCommandLine

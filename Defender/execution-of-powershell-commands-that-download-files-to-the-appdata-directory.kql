@@ -1,0 +1,22 @@
+DeviceProcessEvents
+| where Timestamp > ago(30d)
+| where FileName in~ ("powershell.exe", "pwsh.exe", "powershell_ise.exe")
+| where ProcessCommandLine has_any (
+    "Invoke-WebRequest", "iwr", "wget", "curl", 
+    "Invoke-RestMethod", "irm",
+    "Net.WebClient", "DownloadFile", "DownloadString",
+    "BitsTransfer", "Start-BitsTransfer",
+    "certutil", "-urlcache"
+)
+| where ProcessCommandLine has_any ("AppData", "$env:APPDATA", "%APPDATA%", "\\Roaming\\", "\\Local\\")
+| extend DownloadMethod = case(
+    ProcessCommandLine has_any ("Invoke-WebRequest", "iwr"), "Invoke-WebRequest",
+    ProcessCommandLine has_any ("Invoke-RestMethod", "irm"), "Invoke-RestMethod",
+    ProcessCommandLine has "Net.WebClient", "Net.WebClient",
+    ProcessCommandLine has_any ("Start-BitsTransfer", "BitsTransfer"), "BITS Transfer",
+    ProcessCommandLine has "certutil", "Certutil",
+    "Other"
+)
+| project Timestamp, DeviceName, AccountName, FileName, ProcessCommandLine, 
+    DownloadMethod, InitiatingProcessFileName, InitiatingProcessCommandLine
+| sort by Timestamp desc
